@@ -75,6 +75,7 @@ function AppRouter() {
 function FlujoIngresoEstilizado({ onCompleteLogin }) {
   const [paso, setPaso] = useState('ingresoCI');
   const [ciIngresado, setCiIngresado] = useState('');
+  const navigate = useNavigate(); // <--- Hook de navegación agregado aquí
   
   const [formData, setFormData] = useState({
     ci: '',
@@ -212,10 +213,10 @@ function FlujoIngresoEstilizado({ onCompleteLogin }) {
   return (
     <div className="app-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', padding: '20px', position: 'relative' }}>
       
-      {/* BOTÓN SUPERIOR DERECHO: PERSONAL */}
+      {/* BOTÓN SUPERIOR DERECHO: PERSONAL (Corregido con navigate) */}
       <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
         <button 
-          onClick={() => window.location.href = '/control'}
+          onClick={() => navigate('/control')}
           style={{ background: '#222', color: '#FFD100', border: '1px solid #FFD100', padding: '8px 16px', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', fontSize: '13px' }}
         >
           👨‍💼 Personal (Control de Acceso)
