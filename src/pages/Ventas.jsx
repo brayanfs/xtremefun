@@ -119,7 +119,7 @@ const Ventas = ({ cliente: clienteProps }) => {
   // Salir al inicio de manera limpia con redirección nativa
   const handleSalirAlInicio = () => {
     localStorage.removeItem('xtremefun_carrito_activo');
-    window.location.replace('/');
+    navigate('/', { replace: true });
   };
 
   return (
